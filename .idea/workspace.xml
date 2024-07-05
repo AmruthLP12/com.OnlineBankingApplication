@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="Account Updated">
-      <change beforePath="$PROJECT_DIR$/src/com/banking/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/dao/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/banking/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/model/Customer.java" afterDir="false" />
+    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="Customer Updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/dao/TransactionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/dao/TransactionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/service/TransactionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/banking/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/ui/StockUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/ui/TransactionUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/dao/TransactionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/dao/TransactionDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/model/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/model/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/service/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/service/TransactionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/ui/StockUI.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +59,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.banking.ui.Main" />
+      <module name="com.OnlineBankingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,12 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720171906747</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Customer Updated">
+      <option name="closed" value="true" />
+      <created>1720172184785</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720172184785</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="com.OnlineBankingApplication Project started" />
     <MESSAGE value="Account Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Account Updated" />
+    <MESSAGE value="Customer Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Customer Updated" />
   </component>
 </project>
