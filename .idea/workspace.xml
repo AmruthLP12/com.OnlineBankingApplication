@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="Customer Updated">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/banking/dao/TransactionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/dao/TransactionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/banking/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/banking/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/banking/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/ui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/banking/ui/StockUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/ui/TransactionUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/dao/TransactionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/dao/TransactionDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/model/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/model/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/service/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/service/TransactionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/ui/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/ui/StockUI.class" beforeDir="false" />
-    </list>
+    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="Transaction Updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,13 +104,27 @@
       <option name="project" value="LOCAL" />
       <updated>1720172184785</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Transaction Updated">
+      <option name="closed" value="true" />
+      <created>1720172555471</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720172555471</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="com.OnlineBankingApplication Project started" />
     <MESSAGE value="Account Updated" />
     <MESSAGE value="Customer Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Customer Updated" />
+    <MESSAGE value="Transaction Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transaction Updated" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/com_OnlineBankingApplication$Main.ic" NAME="Main Coverage Results" MODIFIED="1720172320638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.banking.ui.*</FILTER>
+    </SUITE>
   </component>
 </project>
