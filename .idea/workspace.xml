@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="Transaction Updated" />
+    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="TransactionUI Updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/dao/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/dao/AccountDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,21 +24,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AmruthLP12"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AmruthLP12&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AmruthLP12/com.OnlineBankingApplication.git",
-    "accountId": "a8a0bf20-8b22-462b-860d-beb05d5b7e08"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AmruthLP12/com.OnlineBankingApplication.git&quot;,
+    &quot;accountId&quot;: &quot;a8a0bf20-8b22-462b-860d-beb05d5b7e08&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2iosKCrKtZ8229JWeMGqabx94FW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -51,7 +54,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Java/com.OnlineBankingApplication"
   }
 }]]></component>
   <component name="RunManager">
@@ -112,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720172555471</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="TransactionUI Updated">
+      <option name="closed" value="true" />
+      <created>1720243275128</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720243275129</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -120,7 +133,8 @@
     <MESSAGE value="Account Updated" />
     <MESSAGE value="Customer Updated" />
     <MESSAGE value="Transaction Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transaction Updated" />
+    <MESSAGE value="TransactionUI Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="TransactionUI Updated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/com_OnlineBankingApplication$Main.ic" NAME="Main Coverage Results" MODIFIED="1720172320638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

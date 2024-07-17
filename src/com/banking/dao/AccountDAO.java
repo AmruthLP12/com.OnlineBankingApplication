@@ -91,16 +91,31 @@ public class AccountDAO {
     }
 
     public boolean deleteAccount(int id) {
+        boolean isDeleted = false;
         try (Connection conn = DatabaseConfig.getConnection()) {
-            String query = "DELETE FROM accounts WHERE id = ?";
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setInt(1, id);
+            // Start a transaction
+            conn.setAutoCommit(false);
 
-            int rowsDeleted = stmt.executeUpdate();
-            return rowsDeleted > 0;
+            // Delete associated transactions first
+            String deleteTransactionsQuery = "DELETE FROM transactions WHERE account_id = ?";
+            try (PreparedStatement stmt = conn.prepareStatement(deleteTransactionsQuery)) {
+                stmt.setInt(1, id);
+                stmt.executeUpdate();
+            }
+
+            // Delete the account
+            String query = "DELETE FROM accounts WHERE id = ?";
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setInt(1, id);
+                int rowsDeleted = stmt.executeUpdate();
+                isDeleted = rowsDeleted > 0;
+            }
+
+            // Commit the transaction
+            conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return isDeleted;
     }
 }
