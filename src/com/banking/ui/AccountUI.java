@@ -51,9 +51,7 @@ public class AccountUI {
     }
 
     private void viewAccount() {
-        System.out.print("Enter account ID: ");
-        int id = scanner.nextInt();
-        Account account = accountService.getAccountDetails(id);
+        Account account = selectAccount();
         if (account != null) {
             System.out.println(account);
         } else {
@@ -71,8 +69,9 @@ public class AccountUI {
     private void createAccount() {
         System.out.print("Enter account number: ");
         String accountNumber = scanner.nextLine();
-        System.out.print("Enter account type (SAVINGS, CHECKING, BUSINESS): ");
-        String accountType = scanner.nextLine();
+
+        String accountType = selectAccountType();
+
         System.out.print("Enter balance: ");
         double balance = scanner.nextDouble();
         System.out.print("Enter customer ID: ");
@@ -88,15 +87,14 @@ public class AccountUI {
     }
 
     private void updateAccount() {
-        System.out.print("Enter account ID: ");
-        int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
-        Account account = accountService.getAccountDetails(id);
+        Account account = selectAccount();
         if (account != null) {
+            System.out.println("Current account details: " + account);
             System.out.print("Enter new account number: ");
             String accountNumber = scanner.nextLine();
-            System.out.print("Enter new account type (SAVINGS, CHECKING, BUSINESS): ");
-            String accountType = scanner.nextLine();
+
+            String accountType = selectAccountType();
+
             System.out.print("Enter new balance: ");
             double balance = scanner.nextDouble();
             System.out.print("Enter new customer ID: ");
@@ -119,14 +117,70 @@ public class AccountUI {
     }
 
     private void deleteAccount() {
-        System.out.print("Enter account ID: ");
-        int id = scanner.nextInt();
+        Account account = selectAccount();
+        if (account != null) {
+            System.out.println("Deleting account: " + account);
+            if (accountService.deleteAccount(account.getId())) {
+                System.out.println("Account deleted successfully.");
+            } else {
+                System.out.println("Failed to delete account.");
+            }
+        } else {
+            System.out.println("Account not found.");
+        }
+    }
+
+    private Account selectAccount() {
+        List<Account> accounts = accountService.getAllAccounts();
+        if (accounts.isEmpty()) {
+            System.out.println("No accounts available.");
+            return null;
+        }
+
+        System.out.println("Available accounts:");
+        for (int i = 0; i < accounts.size(); i++) {
+            System.out.println((i + 1) + ". " + accounts.get(i));
+        }
+
+        System.out.print("Select account by number: ");
+        int choice = scanner.nextInt();
         scanner.nextLine(); // Consume newline
 
-        if (accountService.deleteAccount(id)) {
-            System.out.println("Account deleted successfully.");
+        if (choice > 0 && choice <= accounts.size()) {
+            return accounts.get(choice - 1);
         } else {
-            System.out.println("Failed to delete account.");
+            System.out.println("Invalid selection. Returning to menu.");
+            return null;
         }
+    }
+
+    private String selectAccountType() {
+        int typeChoice;
+        String accountType = "";
+        do {
+            System.out.println("Select account type:");
+            System.out.println("1. SAVINGS");
+            System.out.println("2. CHECKING");
+            System.out.println("3. BUSINESS");
+            System.out.print("Enter your choice: ");
+            typeChoice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (typeChoice) {
+                case 1:
+                    accountType = "SAVINGS";
+                    break;
+                case 2:
+                    accountType = "CHECKING";
+                    break;
+                case 3:
+                    accountType = "BUSINESS";
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (typeChoice < 1 || typeChoice > 3);
+
+        return accountType;
     }
 }
