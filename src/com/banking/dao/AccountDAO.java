@@ -12,20 +12,33 @@ public class AccountDAO {
 
     public Account getAccountById(int id) {
         Account account = null;
-        try (Connection conn = DatabaseConfig.getConnection()) {
-            String query = "SELECT * FROM accounts WHERE id = ?";
-            PreparedStatement stmt = conn.prepareStatement(query);
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM accounts WHERE id = ?")) {
             stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    account = new Account(rs.getInt("id"), rs.getString("account_number"),
+                            rs.getString("account_type"), rs.getDouble("balance"),
+                            rs.getInt("customer_id"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return account;
+    }
 
-            if (rs.next()) {
-                account = new Account(
-                        rs.getInt("id"),
-                        rs.getString("account_number"),
-                        rs.getString("account_type"),
-                        rs.getDouble("balance"),
-                        rs.getInt("customer_id")
-                );
+    public Account getAccountByNumber(String account_number) {
+        Account account = null;
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM accounts WHERE account_number = ?")) {
+            stmt.setString(1, account_number);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    account = new Account(rs.getInt("id"), rs.getString("account_number"),
+                            rs.getString("account_type"), rs.getDouble("balance"),
+                            rs.getInt("customer_id"));
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -35,19 +48,13 @@ public class AccountDAO {
 
     public List<Account> getAllAccounts() {
         List<Account> accounts = new ArrayList<>();
-        try (Connection conn = DatabaseConfig.getConnection()) {
-            String query = "SELECT * FROM accounts";
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-
+        try (Connection conn = DatabaseConfig.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM accounts")) {
             while (rs.next()) {
-                accounts.add(new Account(
-                        rs.getInt("id"),
-                        rs.getString("account_number"),
-                        rs.getString("account_type"),
-                        rs.getDouble("balance"),
-                        rs.getInt("customer_id")
-                ));
+                accounts.add(new Account(rs.getInt("id"), rs.getString("account_number"),
+                        rs.getString("account_type"), rs.getDouble("balance"),
+                        rs.getInt("customer_id")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -56,16 +63,14 @@ public class AccountDAO {
     }
 
     public boolean createAccount(Account account) {
-        try (Connection conn = DatabaseConfig.getConnection()) {
-            String query = "INSERT INTO accounts (account_number, account_type, balance, customer_id) VALUES (?, ?, ?, ?)";
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setString(1, account.getAccountNumber());
-            stmt.setString(2, account.getAccountType());
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("INSERT INTO accounts (account_number, account_type, balance, customer_id) VALUES (?, ?, ?, ?)")) {
+            stmt.setString(1, account.getaccount_number());
+            stmt.setString(2, account.getaccount_type());
             stmt.setDouble(3, account.getBalance());
-            stmt.setInt(4, account.getCustomerId());
-
-            int rowsInserted = stmt.executeUpdate();
-            return rowsInserted > 0;
+            stmt.setInt(4, account.getcustomer_id());
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -73,17 +78,15 @@ public class AccountDAO {
     }
 
     public boolean updateAccount(Account account) {
-        try (Connection conn = DatabaseConfig.getConnection()) {
-            String query = "UPDATE accounts SET account_number = ?, account_type = ?, balance = ?, customer_id = ? WHERE id = ?";
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setString(1, account.getAccountNumber());
-            stmt.setString(2, account.getAccountType());
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("UPDATE accounts SET account_number = ?, account_type = ?, balance = ?, customer_id = ? WHERE id = ?")) {
+            stmt.setString(1, account.getaccount_number());
+            stmt.setString(2, account.getaccount_type());
             stmt.setDouble(3, account.getBalance());
-            stmt.setInt(4, account.getCustomerId());
+            stmt.setInt(4, account.getcustomer_id());
             stmt.setInt(5, account.getId());
-
-            int rowsUpdated = stmt.executeUpdate();
-            return rowsUpdated > 0;
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -91,31 +94,14 @@ public class AccountDAO {
     }
 
     public boolean deleteAccount(int id) {
-        boolean isDeleted = false;
-        try (Connection conn = DatabaseConfig.getConnection()) {
-            // Start a transaction
-            conn.setAutoCommit(false);
-
-            // Delete associated transactions first
-            String deleteTransactionsQuery = "DELETE FROM transactions WHERE account_id = ?";
-            try (PreparedStatement stmt = conn.prepareStatement(deleteTransactionsQuery)) {
-                stmt.setInt(1, id);
-                stmt.executeUpdate();
-            }
-
-            // Delete the account
-            String query = "DELETE FROM accounts WHERE id = ?";
-            try (PreparedStatement stmt = conn.prepareStatement(query)) {
-                stmt.setInt(1, id);
-                int rowsDeleted = stmt.executeUpdate();
-                isDeleted = rowsDeleted > 0;
-            }
-
-            // Commit the transaction
-            conn.commit();
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("DELETE FROM accounts WHERE id = ?")) {
+            stmt.setInt(1, id);
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return isDeleted;
+        return false;
     }
 }

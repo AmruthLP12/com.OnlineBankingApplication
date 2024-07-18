@@ -13,6 +13,10 @@ public class AccountService {
         return accountDAO.getAccountById(id);
     }
 
+    public Account getAccountByNumber(String account_number) {
+        return accountDAO.getAccountByNumber(account_number);
+    }
+
     public List<Account> getAllAccounts() {
         return accountDAO.getAllAccounts();
     }

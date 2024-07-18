@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="TransactionUI Updated">
+    <list default="true" id="f6c4f58c-859e-4921-b0a6-7e2d49fbac6c" name="Changes" comment="Account type selection simplified Updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/banking/dao/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/dao/AccountDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/banking/ui/AccountUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/banking/ui/AccountUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/dao/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/dao/AccountDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/model/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/model/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/service/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/service/AccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/banking/ui/AccountUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/banking/ui/AccountUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,18 +54,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java/com.OnlineBankingApplication"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Java/com.OnlineBankingApplication&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.banking.ui.Main" />
@@ -125,7 +132,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720243275129</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Acount Delete DAO Updated">
+      <option name="closed" value="true" />
+      <created>1721231056415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721231056415</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Account type selection simplified Updated">
+      <option name="closed" value="true" />
+      <created>1721231468371</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721231468371</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,7 +157,9 @@
     <MESSAGE value="Customer Updated" />
     <MESSAGE value="Transaction Updated" />
     <MESSAGE value="TransactionUI Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="TransactionUI Updated" />
+    <MESSAGE value="Acount Delete DAO Updated" />
+    <MESSAGE value="Account type selection simplified Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Account type selection simplified Updated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/com_OnlineBankingApplication$Main.ic" NAME="Main Coverage Results" MODIFIED="1720172320638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

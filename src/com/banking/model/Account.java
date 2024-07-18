@@ -3,20 +3,21 @@ package com.banking.model;
 
 public class Account {
     private int id;
-    private String accountNumber;
-    private String accountType;
+    private String account_number;
+    private String account_type;
     private double balance;
-    private int customerId;
+    private int customer_id;
 
-    public Account(int id, String accountNumber, String accountType, double balance, int customerId) {
+    public Account(int id, String account_number, String account_type, double balance, int customer_id) {
         this.id = id;
-        this.accountNumber = accountNumber;
-        this.accountType = accountType;
+        this.account_number = account_number;
+        this.account_type = account_type;
         this.balance = balance;
-        this.customerId = customerId;
+        this.customer_id = customer_id;
     }
 
-    // Getters and setters...
+    // Getters and Setters
+
     public int getId() {
         return id;
     }
@@ -25,20 +26,20 @@ public class Account {
         this.id = id;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getaccount_number() {
+        return account_number;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setaccount_number(String account_number) {
+        this.account_number = account_number;
     }
 
-    public String getAccountType() {
-        return accountType;
+    public String getaccount_type() {
+        return account_type;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setaccount_type(String account_type) {
+        this.account_type = account_type;
     }
 
     public double getBalance() {
@@ -49,22 +50,22 @@ public class Account {
         this.balance = balance;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getcustomer_id() {
+        return customer_id;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setcustomer_id(int customer_id) {
+        this.customer_id = customer_id;
     }
 
     @Override
     public String toString() {
         return "Account{" +
                 "id=" + id +
-                ", accountNumber='" + accountNumber + '\'' +
-                ", accountType='" + accountType + '\'' +
+                ", account_number='" + account_number + '\'' +
+                ", account_type='" + account_type + '\'' +
                 ", balance=" + balance +
-                ", customerId=" + customerId +
+                ", customer_id=" + customer_id +
                 '}';
     }
 }
