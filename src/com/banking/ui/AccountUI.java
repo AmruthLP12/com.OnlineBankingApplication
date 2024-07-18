@@ -86,7 +86,7 @@ public class AccountUI {
     private void createAccount() {
         System.out.print("Enter account number: ");
         String account_number = scanner.nextLine();
-        System.out.print("Enter account type (SAVINGS, CHECKING, BUSINESS): ");
+        System.out.print("Enter account type (1.SAVINGS, 2.CHECKING, 3.BUSINESS): ");
         String account_type = scanner.nextLine();
         System.out.print("Enter balance: ");
         double balance = scanner.nextDouble();
@@ -95,11 +95,8 @@ public class AccountUI {
         scanner.nextLine(); // Consume newline
 
         Account account = new Account(0, account_number, account_type, balance, customer_id);
-        if (accountService.createAccount(account)) {
-            System.out.println("Account created successfully.");
-        } else {
-            System.out.println("Failed to create account.");
-        }
+        String result = accountService.createAccount(account);
+        System.out.println(result);
     }
 
     private void updateAccount() {

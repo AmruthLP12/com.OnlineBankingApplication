@@ -62,19 +62,26 @@ public class AccountDAO {
         return accounts;
     }
 
-    public boolean createAccount(Account account) {
+    public String createAccount(Account account) {
+        String sql = "INSERT INTO accounts (account_number, account_type, balance, customer_id) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseConfig.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("INSERT INTO accounts (account_number, account_type, balance, customer_id) VALUES (?, ?, ?, ?)")) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, account.getaccount_number());
             stmt.setString(2, account.getaccount_type());
             stmt.setDouble(3, account.getBalance());
             stmt.setInt(4, account.getcustomer_id());
             int rowsAffected = stmt.executeUpdate();
-            return rowsAffected > 0;
+            if (rowsAffected > 0) {
+                return "Account created successfully.";
+            } else {
+                return "Failed to create account.";
+            }
+        } catch (SQLIntegrityConstraintViolationException e) {
+            return "Error: Account number already exists.";
         } catch (SQLException e) {
             e.printStackTrace();
+            return "Error: Unable to create account.";
         }
-        return false;
     }
 
     public boolean updateAccount(Account account) {

@@ -21,7 +21,7 @@ public class AccountService {
         return accountDAO.getAllAccounts();
     }
 
-    public boolean createAccount(Account account) {
+    public String createAccount(Account account) {
         return accountDAO.createAccount(account);
     }
 
