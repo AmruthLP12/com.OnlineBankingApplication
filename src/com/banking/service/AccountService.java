@@ -4,6 +4,7 @@ package com.banking.service;
 import com.banking.dao.AccountDAO;
 import com.banking.model.Account;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class AccountService {
@@ -22,7 +23,11 @@ public class AccountService {
     }
 
     public String createAccount(Account account) {
-        return accountDAO.createAccount(account);
+        try {
+            return accountDAO.createAccount(account);
+        } catch (SQLException e) {
+            return e.getMessage();
+        }
     }
 
     public boolean updateAccount(Account account) {

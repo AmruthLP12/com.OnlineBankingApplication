@@ -62,7 +62,7 @@ public class AccountDAO {
         return accounts;
     }
 
-    public String createAccount(Account account) {
+    public String createAccount(Account account) throws SQLException {
         String sql = "INSERT INTO accounts (account_number, account_type, balance, customer_id) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseConfig.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -77,10 +77,16 @@ public class AccountDAO {
                 return "Failed to create account.";
             }
         } catch (SQLIntegrityConstraintViolationException e) {
-            return "Error: Account number already exists.";
+            if (e.getMessage().contains("Duplicate entry")) {
+                throw new SQLException("Error: Account number already exists.");
+            } else if (e.getMessage().contains("a foreign key constraint fails")) {
+                throw new SQLException("Error: Customer ID does not exist.");
+            } else {
+                throw new SQLException("Error: Data integrity violation.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return "Error: Unable to create account.";
+            throw new SQLException("Error: Unable to create account.");
         }
     }
 
